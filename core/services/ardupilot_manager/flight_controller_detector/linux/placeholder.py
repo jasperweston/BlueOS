@@ -10,3 +10,4 @@ class Placeholder(NavigatorPi4):
     devices = {
         "ADS1115": (0x48, 1),
     }
+    
