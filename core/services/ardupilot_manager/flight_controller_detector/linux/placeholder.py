@@ -8,6 +8,5 @@ class Placeholder(NavigatorPi4):
     platform = Platform.Placeholder
 
     devices = {
-        "ADS1115": (0x48, 1),
+        "ADS1115": (0x48, 4),
     }
-    
