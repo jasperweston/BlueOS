@@ -46,7 +46,7 @@ def get_correspondent_decoder_platform(current_platform: Platform) -> Union[Boar
         Platform.Argonot: BoardSubType.LINUX_NAVIGATOR,
         Platform.Navigator64: BoardSubType.LINUX_NAVIGATOR,
         Platform.Placeholder: BoardSubType.LINUX_PLACEHOLDER,
-        Platform.Placeholder: BoardSubType.LINUX_PLACEHOLDER,
+        Platform.Placeholder64: BoardSubType.LINUX_PLACEHOLDER,
     }
     return correspondent_decoder_platform.get(current_platform, BoardType.EMPTY)
 
