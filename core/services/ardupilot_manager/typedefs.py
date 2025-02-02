@@ -113,6 +113,7 @@ class Platform(str, Enum):
     Navigator64 = "navigator64"
     Argonot = "argonot"
     Placeholder = "placeholder"
+    Placeholder64 = "Placeholder64"
     SITL = get_sitl_platform_name(machine())
 
     @property
@@ -128,6 +129,7 @@ class Platform(str, Enum):
             Platform.Navigator64: PlatformType.Linux,
             Platform.Argonot: PlatformType.Linux,
             Platform.Placeholder: PlatformType.Linux,
+            Platform.Placeholder64: PlatformType.Linux,
             Platform.SITL: PlatformType.SITL,
         }
         return platform_types.get(self, PlatformType.Unknown)
