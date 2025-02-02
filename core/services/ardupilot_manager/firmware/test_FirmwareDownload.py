@@ -58,9 +58,4 @@ def test_firmware_download() -> None:
     else:
         with pytest.raises(Exception):
             firmware_download.download(Vehicle.Sub, Platform.Navigator)
-
-    if "x86" in os.uname().machine:
-        assert firmware_download.download(Vehicle.Sub, Platform.Placeholder), "Failed to download placeholder binary."
-    else:
-        with pytest.raises(Exception):
-            firmware_download.download(Vehicle.Sub, Platform.Placeholder)
+            

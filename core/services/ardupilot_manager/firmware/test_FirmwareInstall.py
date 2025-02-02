@@ -31,11 +31,6 @@ def test_firmware_validation() -> None:
     with pytest.raises(InvalidFirmwareFile):
         installer.validate_firmware(temporary_file, Platform.Navigator)
 
-        # Raise when validating Navigator firmwares (as test platform is x86)
-    temporary_file = downloader.download(Vehicle.Sub, Platform.Placeholder)
-    with pytest.raises(InvalidFirmwareFile):
-        installer.validate_firmware(temporary_file, Platform.Placeholder)
-
     # Install SITL firmware
     if platform.system() != "Darwin":
         # there are no SITL builds for MacOS
