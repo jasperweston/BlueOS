@@ -41,7 +41,7 @@ class PlaceholderPi5(Placeholder):
     devices = {
         "ADS1115": (0x48, 1),
         "GY-91": (0x68, 1),
-        "BMP280": (0x76, 1)
+        "BMP280": (0x76, 1),
     }
 
     def get_serials(self) -> List[Serial]:
@@ -62,7 +62,7 @@ class PlaceholderPi4(Placeholder):
     devices = {
         "ADS1115": (0x48, 1),
         "GY-91": (0x68, 1),
-        "BMP280": (0x76, 1)
+        "BMP280": (0x76, 1),
     }
 
     def get_serials(self) -> List[Serial]:
