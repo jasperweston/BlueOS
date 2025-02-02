@@ -58,4 +58,3 @@ def test_firmware_download() -> None:
     else:
         with pytest.raises(Exception):
             firmware_download.download(Vehicle.Sub, Platform.Navigator)
-
