@@ -6,55 +6,14 @@ import shutil
 import stat
 from typing import Optional, Union
 
-from ardupilot_fw_decoder import BoardType, Decoder
+from ardupilot_fw_decoder import BoardSubType, BoardType, Decoder
 from elftools.elf.elffile import ELFFile
 from loguru import logger
-
-
 
 from exceptions import FirmwareInstallFail, InvalidFirmwareFile, UnsupportedPlatform
 from firmware.FirmwareDownload import FirmwareDownloader
 from firmware.FirmwareUpload import FirmwareUploader
 from typedefs import FirmwareFormat, FlightController, Platform, PlatformType
-
-
-class BoardSubType(enum.Enum):
-    NONE = 65535
-
-    LINUX_NONE = 1000
-    LINUX_ERLEBOARD = 1001
-    LINUX_PXF = 1002
-    LINUX_NAVIO = 1003
-    LINUX_ZYNQ = 1004
-    LINUX_BBBMINI = 1005
-    LINUX_BEBOP = 1006
-    LINUX_ERLEBRAIN2 = 1009
-    LINUX_BH = 1010
-    LINUX_PXFMINI = 1012
-    LINUX_NAVIO2 = 1013
-    LINUX_DISCO = 1014
-    LINUX_AERO = 1015
-    LINUX_DARK = 1016
-    LINUX_BLUE = 1018
-    LINUX_OCPOC_ZYNQ = 1019
-    LINUX_EDGE = 1020
-    LINUX_RST_ZYNQ = 1021
-    LINUX_POCKET = 1022
-    LINUX_NAVIGATOR = 1023
-    LINUX_VNAV = 1024
-    LINUX_OBAL = 1025
-    LINUX_CANZERO = 1026
-    LINUX_PLACEHOLDER = 1027
-    CHIBIOS_SKYVIPER_F412 = 5000
-    CHIBIOS_FMUV3 = 5001
-    CHIBIOS_FMUV4 = 5002
-    CHIBIOS_GENERIC = 5009
-    CHIBIOS_FMUV5 = 5013
-    CHIBIOS_VRBRAIN_V51 = 5016
-    CHIBIOS_VRBRAIN_V52 = 5017
-    CHIBIOS_VRUBRAIN_V51 = 5018
-    CHIBIOS_VRCORE_V10 = 5019
-    CHIBIOS_VRBRAIN_V54 = 5020
 
 
 def get_board_id(platform: Platform) -> int:
