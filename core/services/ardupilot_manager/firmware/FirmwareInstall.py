@@ -10,6 +10,14 @@ from ardupilot_fw_decoder import BoardType, Decoder
 from elftools.elf.elffile import ELFFile
 from loguru import logger
 
+
+
+from exceptions import FirmwareInstallFail, InvalidFirmwareFile, UnsupportedPlatform
+from firmware.FirmwareDownload import FirmwareDownloader
+from firmware.FirmwareUpload import FirmwareUploader
+from typedefs import FirmwareFormat, FlightController, Platform, PlatformType
+
+
 class BoardSubType(enum.Enum):
     NONE = 65535
 
@@ -47,12 +55,6 @@ class BoardSubType(enum.Enum):
     CHIBIOS_VRUBRAIN_V51 = 5018
     CHIBIOS_VRCORE_V10 = 5019
     CHIBIOS_VRBRAIN_V54 = 5020
-
-
-from exceptions import FirmwareInstallFail, InvalidFirmwareFile, UnsupportedPlatform
-from firmware.FirmwareDownload import FirmwareDownloader
-from firmware.FirmwareUpload import FirmwareUploader
-from typedefs import FirmwareFormat, FlightController, Platform, PlatformType
 
 
 def get_board_id(platform: Platform) -> int:
