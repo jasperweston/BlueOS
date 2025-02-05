@@ -38,8 +38,8 @@ class OBAL(LinuxFlightController):
 
 class OBALPi4(OBAL):
     devices = {
-        "ADS1115": (0x48, 4),
-        "PCA9685": (0x40, 4),
+        "ADS1115": (0x48, 1),
+        "PCA9685": (0x40, 1),
     }
 
     def get_serials(self) -> List[Serial]:
