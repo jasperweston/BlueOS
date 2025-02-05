@@ -36,7 +36,7 @@ class OBAL(LinuxFlightController):
         raise NotImplementedError
 
 
-class OBAL_Pi4(OBAL):
+class OBALPi4(OBAL):
     devices = {
         "ADS1115": (0x48, 4),
         "PCA9685": (0x40, 4),
@@ -67,6 +67,5 @@ class OBAL_Pi4(OBAL):
 
     def detect(self) -> bool:
         if self.is_pi5():
-            raise RuntimeError("OBAL is not currently supported on RPi5")
             return False
         return all(self.check_for_i2c_device(bus, address) for address, bus in self.devices.values())
